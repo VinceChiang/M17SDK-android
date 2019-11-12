@@ -1,0 +1,72 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    //Multidex
+    ext.multidex_version = '2.0.1'
+
+    //Kotlin
+    ext.kotlin_version = '1.3.50'
+    ext.kotlin_coroutines = '1.3.1'
+
+    //Gson
+    ext.gson_version = '2.8.6'
+
+    //Koin
+    ext.koin = '2.0.1'
+
+    //Retrofit
+    ext.retrofit = '2.6.2'
+    ext.okhttp = '4.2.2'
+    ext.loggingInterceptor = '4.2.2'
+    ext.retrofitcachelibrx2 = '1.0.7'
+
+    //RxJava
+    ext.rxJava = '2.2.10'
+    ext.rxKotlin = '2.4.0'
+    ext.rxAndroid = '2.1.1'
+    ext.rxBinding = '2.2.0'
+
+    //Timber
+    ext.timber = '4.7.1'
+
+    //Glide
+    ext.glide_version = '4.10.0'
+    ext.glide_transformations = '4.1.0'
+
+    //Paging
+    ext.paging_version = '2.1.0'
+
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+
+        maven {
+            url "https://raw.githubusercontent.com/17media/M17_SDK_Released/master/releases"
+            credentials(HttpHeaderCredentials) {
+                name = "Authorization"
+                value = "Bearer "
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
