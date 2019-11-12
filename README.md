@@ -1,10 +1,10 @@
 # 17SDK-Android
 
-##Generate your github authorization
+## Generate your github authorization
 ![](website/github_generate_auth.png)
 
-##Gradle
-###Repositories
+## Gradle
+### Repositories
 ```
 maven {
     url "https://raw.githubusercontent.com/17media/M17_SDK_Released/master/releases"
@@ -18,14 +18,14 @@ maven {
 }
 ```
 
-###DataBinding
+### DataBinding
 ```
 dataBinding {
    enabled = true
 }
 ```
 
-###Dependencies
+### Dependencies
 ```
 //M17SDK
 implementation "com.machipopo.media17:sdk:1.0.3"
@@ -76,8 +76,8 @@ implementation "androidx.paging:paging-runtime-ktx:$paging_version"
 implementation "androidx.paging:paging-rxjava2:$paging_version"
 ```
 
-##Application
-###SDK Init
+## Application
+### SDK Init
 ```
 override fun onCreate() {
    super.onCreate()
@@ -85,16 +85,16 @@ override fun onCreate() {
 }
 ```
 
-###Class Reference
+### Class Reference
  - (Class) M17LiveListConfig - To create the configuration for live list fragment.
  - (Interface) M17LiveCellBaseView - The view has to confirm this interface to implement in your custom live cell layout.
 
-###How to get the live list Fragment
+### How to get the live list Fragment
 ![](website/LiveListFragment.png)
 
-###How to implement your own live cell layout
+### How to implement your own live cell layout
 ![](website/LiveCellBaseView.png)
 
-##Run your project
+## Run your project
 
 
