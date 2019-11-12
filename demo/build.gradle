@@ -35,7 +35,7 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
 
 
-    implementation "com.machipopo.media17:sdk:1.0.2"
+    implementation "com.machipopo.media17:sdk:1.0.3"
 
     //Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
