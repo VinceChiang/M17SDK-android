@@ -1,4 +1,4 @@
-# 17SDK-Android
+# M17SDK-Android
 
 ## Generate your github authorization
 ![](website/github_generate_auth.png)
