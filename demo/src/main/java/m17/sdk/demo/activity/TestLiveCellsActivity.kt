@@ -1,17 +1,18 @@
 package m17.sdk.demo.activity
 
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.m17.sdk.demo.view.TestLiveCellLayout
-import com.machipopo.media17.sdk.module.common.activity.M17BaseActivity
-import com.machipopo.media17.sdk.module.livelist.interfaces.M17LiveCellBaseView
-import com.machipopo.media17.sdk.module.livelist.interfaces.M17LiveCellRender
-import com.machipopo.media17.sdk.module.sdk.M17LiveListConfig
-import com.machipopo.media17.sdk.module.sdk.M17Sdk
+import com.m17ent.core.module.common.view.M17RoundImageView
+import m17.sdk.demo.view.TestLiveCellLayout
+import com.m17ent.core.module.sdk.M17Sdk
+import com.m17ent.core.module.sdk.configs.M17LiveListConfig
+import com.m17ent.core.module.sdk.interfaces.M17LiveCellBaseView
+import com.m17ent.core.module.sdk.interfaces.M17LiveCellRender
 import m17.sdk.demo.R
 import m17.sdk.demo.databinding.TestActivityLiveListBinding
 
-class TestLiveCellsActivity : M17BaseActivity() {
+class TestLiveCellsActivity : AppCompatActivity() {
 
     private lateinit var dataBinding : TestActivityLiveListBinding
 
@@ -35,7 +36,7 @@ class TestLiveCellsActivity : M17BaseActivity() {
         fragment?.let {
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.frame, fragment, "TestLiveListFragment")
+                .replace(R.id.frame, it, "TestLiveListFragment")
                 .addToBackStack(null)
                 .commit()
         }

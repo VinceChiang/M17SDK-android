@@ -3,7 +3,6 @@ package m17.sdk.demo
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import m17.sdk.demo.R
 import m17.sdk.demo.activity.TestLiveCellsActivity
 
 class StartDemoActivity : Activity(){

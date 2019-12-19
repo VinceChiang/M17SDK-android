@@ -1,4 +1,4 @@
-package com.m17.sdk.demo.view
+package m17.sdk.demo.view
 
 import android.content.Context
 import android.util.AttributeSet
@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
-import com.machipopo.media17.sdk.module.livelist.interfaces.M17LiveCellBaseView
+import com.m17ent.core.module.sdk.interfaces.M17LiveCellBaseView
 import m17.sdk.demo.R
 
 
-class TestLiveCellLayout : FrameLayout, M17LiveCellBaseView{
+class TestLiveCellLayout : FrameLayout, M17LiveCellBaseView {
 
     //private lateinit var binding : TestAdapterLiveListItemBinding
 

@@ -33,6 +33,9 @@ buildscript {
     ext.glide_version = '4.10.0'
     ext.glide_transformations = '4.1.0'
 
+    //Picasso
+    ext.picasso_version = '2.71828'
+
     //Paging
     ext.paging_version = '2.1.0'
 
