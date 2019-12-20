@@ -3,7 +3,6 @@ package m17.sdk.demo.activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.m17ent.core.module.common.view.M17RoundImageView
 import m17.sdk.demo.view.TestLiveCellLayout
 import com.m17ent.core.module.sdk.M17Sdk
 import com.m17ent.core.module.sdk.configs.M17LiveListConfig
@@ -26,11 +25,18 @@ class TestLiveCellsActivity : AppCompatActivity() {
             this.setLifecycleOwner(this@TestLiveCellsActivity)
         }
 
-        var config = M17LiveListConfig(object : M17LiveCellRender {
-            override fun renderCell(): M17LiveCellBaseView {
-                return TestLiveCellLayout(this@TestLiveCellsActivity)
-            }
-        })
+        M17Sdk.getInstance().setUser("Set UserId")
+
+        var config = M17LiveListConfig()
+
+        //Customer -- START
+//        var config = M17LiveListConfig(object : M17LiveCellRender {
+//            override fun renderCell(): M17LiveCellBaseView {
+//                return TestLiveCellLayout(this@TestLiveCellsActivity)
+//            }
+//        })
+        //Customer -- END
+
         val fragment = M17Sdk.getInstance().createLiveListFragment(config)
 
         fragment?.let {

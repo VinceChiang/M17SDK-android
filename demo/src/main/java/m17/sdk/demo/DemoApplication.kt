@@ -8,7 +8,7 @@ class DemoApplication : MultiDexApplication() {
     override fun onCreate() {
         super.onCreate()
 
-        M17Sdk.getInstance().initSdk(this, M17SdkConfig("userId", "license"))
+        M17Sdk.getInstance().initSdk(this, M17SdkConfig("License"))
     }
 }
 

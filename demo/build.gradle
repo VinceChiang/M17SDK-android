@@ -1,7 +1,5 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -35,14 +33,17 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
 
     //M17SDK -- START
-    implementation "com.m17ent:core:1.0.6"
-    implementation "com.m17ent:messaging:1.0.0"
-    implementation "com.m17ent:player:1.0.0"
+    //implementation files("libs/m17ent-core-release.aar")
+    //implementation files("libs/m17ent-messaging-release.aar")
+    //implementation files("libs/m17ent-player-release.aar")
+    implementation "com.m17ent:core:1.0.8"
+    implementation "com.m17ent:messaging:1.0.2"
+    implementation "com.m17ent:player:1.0.1"
     implementation 'com.android.support:preference-v14'
     //M17SDK -- END
 
-    //Picasso
-    implementation "com.squareup.picasso:picasso:$picasso_version"
+    //ViewPager2
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
 
     //Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
