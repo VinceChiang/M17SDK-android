@@ -10,7 +10,7 @@ maven {
     url "https://raw.githubusercontent.com/17media/M17_SDK_Released/master/releases"
     credentials(HttpHeaderCredentials) {
         name = "Authorization"
-        value = "Bearer {input your github authorization}"
+        value = "Bearer {Input Your Github Authorization}"
     }
     authentication {
         header(HttpHeaderAuthentication)
@@ -29,7 +29,11 @@ dataBinding {
 ```
 //M17SDK
 implementation "com.machipopo.media17:sdk:1.0.3"
-
+implementation "com.m17ent:core:1.0.8"
+implementation "com.m17ent:messaging:1.0.2"
+implementation "com.m17ent:player:1.0.1"
+implementation 'com.android.support:preference-v14'
+    
 //Kotlin
 implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
@@ -63,14 +67,6 @@ implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 //Timber
 implementation "com.jakewharton.timber:timber:$timber"
 
-//Glide
-implementation "jp.wasabeef:glide-transformations:$glide_transformations"
-implementation "com.github.bumptech.glide:glide:$glide_version"
-implementation "com.github.bumptech.glide:okhttp3-integration:$glide_version"
-implementation("com.github.bumptech.glide:recyclerview-integration:$glide_version") {
-    transitive = false
-}
-
 //Paging
 implementation "androidx.paging:paging-runtime-ktx:$paging_version"
 implementation "androidx.paging:paging-rxjava2:$paging_version"
@@ -81,9 +77,12 @@ implementation "androidx.paging:paging-rxjava2:$paging_version"
 ```
 override fun onCreate() {
    super.onCreate()
-   M17Sdk.getInstance().initSdk(this)
+   M17Sdk.getInstance().initSdk(M17SdkConfig({"Input Your License"}))
 }
 ```
+
+### Set Your UserId
+ - M17Sdk.getInstance().setUser({"Input Your UserId"})
 
 ### Class Reference
  - (Class) M17LiveListConfig - To create the configuration for live list fragment.
