@@ -28,7 +28,6 @@ dataBinding {
 ### Dependencies
 ```
 //M17SDK
-implementation "com.machipopo.media17:sdk:1.0.3"
 implementation "com.m17ent:core:1.0.8"
 implementation "com.m17ent:messaging:1.0.2"
 implementation "com.m17ent:player:1.0.1"
