@@ -25,7 +25,7 @@ class TestLiveCellsActivity : AppCompatActivity() {
             this.setLifecycleOwner(this@TestLiveCellsActivity)
         }
 
-        M17Sdk.getInstance().setUser("Set UserId")
+        M17Sdk.getInstance().setUser("Set Company Name", "Set UserId")
 
         var config = M17LiveListConfig()
 
