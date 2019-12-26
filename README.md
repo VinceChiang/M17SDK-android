@@ -87,11 +87,91 @@ override fun onCreate() {
  - (Class) M17LiveListConfig - To create the configuration for live list fragment.
  - (Interface) M17LiveCellBaseView - The view has to confirm this interface to implement in your custom live cell layout.
 
-### How to get the live list Fragment
+### How to get the custom Fragment of live list 
 ![](website/LiveListFragment.png)
 
-### How to implement your own live cell layout
+### How to implement your custom layout of live cell
 ![](website/LiveCellBaseView.png)
+
+### Set your proguard-rules.pro
+```
+# Core Module -- START
+-keep class com.m17ent.core.dto.** { *; }
+-keep class com.m17ent.core.module.**.dto.** { *; }
+-keep class com.m17ent.core.module.sdk.** { *; }
+-keep public class com.m17ent.core.module.common.activity.M17BaseActivity { *; }
+-keep public class com.m17ent.core.module.common.fragment.M17BaseFragment { *; }
+-keep interface * {
+  <methods>;
+}
+# Core Module -- START
+
+# Messaging Module -- START
+-keep class com.m17ent.messaging.dto.** { *; }
+-keep class com.m17ent.messaging.module.**.dto.** { *; }
+-keep class com.m17ent.messaging.module.**.interface.** { *; }
+-keep class com.m17ent.messaging.module.msgprovider.** { *; }
+# Messaging Module -- END
+
+#WANSU_CHAT -- START
+-keep class com.wangsu.mts.** { *; }
+#WANSU_CHAT -- END
+
+# Pubnub -- START
+-dontwarn org.slf4j.**
+-dontwarn com.pubnub.**
+-keep class com.pubnub.** { *; }
+-dontnote retrofit2.Platform
+-dontwarn retrofit2.Platform$Java8
+-dontnote retrofit2.Platform$IOS$MainThreadExecutor
+-keepattributes Exceptions
+# Pubnub -- END
+
+# Ijk -- START
+-keep class tv.danmaku.ijk.media.** { *; }
+# Ijk -- END
+
+#----------------------
+
+# Koin
+-keep public class * extends java.lang.Exception
+-keepclassmembernames class kotlinx.** {
+    volatile <fields>;
+}
+
+# OkHttp3
+-dontwarn okhttp3.internal.platform.ConscryptPlatform
+-dontwarn org.codehaus.mojo.animal_sniffer.*
+-keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
+
+# Retrofit https://github.com/yale8848/RetrofitCache
+-dontwarn ren.yale.android.retrofitcachelibrx2.**
+-keep class ren.yale.android.retrofitcachelibrx2.** { *; }
+-keepclasseswithmembernames class retrofit2.adapter.rxjava2.BodyObservable { *; }
+-keepclasseswithmembernames class retrofit2.adapter.rxjava2.ResultObservable { *; }
+-keepclasseswithmembernames class retrofit2.adapter.rxjava2.CallEnqueueObservable { *; }
+-keepclasseswithmembernames class retrofit2.adapter.rxjava2.CallExecuteObservable { *; }
+-keepclasseswithmembernames class retrofit2.Retrofit { *; }
+-keepclasseswithmembernames class retrofit2.ServiceMethod { *; }
+-keepclasseswithmembernames class retrofit2.OkHttpCall { *; }
+-dontwarn javax.annotation.**
+-keepclassmembers,allowshrinking,allowobfuscation interface * {
+    @retrofit2.http.* <methods>;
+}
+-keepclasseswithmembers class * {
+    @retrofit2.http.* <methods>;
+}
+
+# Gson specific classes
+-dontwarn sun.misc.**
+-keep class sun.misc.Unsafe { *; }
+-keep class com.google.gson.stream.** { *; }
+-keep class com.google.gson.examples.android.model.** { *; }
+-keep class * implements com.google.gson.TypeAdapterFactory
+-keep class * implements com.google.gson.JsonSerializer
+-keep class * implements com.google.gson.JsonDeserializer
+
+```
 
 ## Run your project
 
