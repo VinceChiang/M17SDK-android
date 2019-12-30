@@ -28,7 +28,7 @@ dataBinding {
 ### Dependencies
 ```
 //M17SDK
-implementation "com.m17ent:core:1.0.11"
+implementation "com.m17ent:core:1.1.0"
 implementation "com.m17ent:messaging:1.0.3"
 implementation "com.m17ent:player:1.0.2"
 implementation 'com.android.support:preference-v14'
