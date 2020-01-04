@@ -28,8 +28,8 @@ dataBinding {
 ### Dependencies
 ```
 //M17SDK
-implementation "com.m17ent:core:1.1.0"
-implementation "com.m17ent:messaging:1.0.3"
+implementation "com.m17ent:core:1.1.4"
+implementation "com.m17ent:messaging:1.0.4"
 implementation "com.m17ent:player:1.0.2"
 implementation 'com.android.support:preference-v14'
     
@@ -39,6 +39,9 @@ implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 //Android X
 implementation 'androidx.appcompat:appcompat:1.1.0'
 implementation 'androidx.core:core-ktx:1.1.0'
+
+//ViewPager2
+implementation 'androidx.viewpager2:viewpager2:1.0.0'
 
 //Gson
 implementation "com.google.code.gson:gson:$gson_version"
@@ -76,15 +79,20 @@ implementation "androidx.paging:paging-rxjava2:$paging_version"
 ```
 override fun onCreate() {
    super.onCreate()
-   M17Sdk.getInstance().initSdk(M17SdkConfig({"Input Your License"}))
+   M17Sdk.getInstance().initSdkApplication(M17SdkConfig({"Input Your License"}))
 }
 ```
 
-### Set Your UserId
- - M17Sdk.getInstance().setUser({"Input Your UserId"})
+### Set Your CompanyName And UserId, Then Get Your License to Show Live List
+ - M17Sdk.getInstance().getLicense("Input Your Company Name", "Input Your UserId", M17LicenseCallback {
+               override fun onSuccess(license: M17License) {
+                       ``` Handle Your License ```
+                       ``` ex.license.getRegionlListFilterConfig() is M17ListFilterConfig ``` 
+               }
+           })
 
 ### Class Reference
- - (Class) M17LiveListConfig - To create the configuration for live list fragment.
+ - (Class) M17LiveListConfig(M17ListFilterConfig) - To create the configuration for live list fragment.
  - (Interface) M17LiveCellBaseView - The view has to confirm this interface to implement in your custom live cell layout.
 
 ### How to get the custom Fragment of live list 

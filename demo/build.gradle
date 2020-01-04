@@ -2,6 +2,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+ext{
+    m17ent_core = '1.1.4'
+    m17ent_messaging = '1.0.4'
+    m17ent_player = '1.0.2'
+}
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -12,6 +18,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "VERSION_INFO", "\"Core:v${m17ent_core}, Messaging:v${m17ent_messaging}, Player:v${m17ent_player}\""
     }
 
     buildTypes {
@@ -42,9 +50,9 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
 
     //M17SDK -- START
-    implementation "com.m17ent:core:1.1.0"
-    implementation "com.m17ent:messaging:1.0.3"
-    implementation "com.m17ent:player:1.0.2"
+    implementation "com.m17ent:core:$m17ent_core"
+    implementation "com.m17ent:messaging:$m17ent_messaging"
+    implementation "com.m17ent:player:$m17ent_player"
     implementation 'com.android.support:preference-v14'
     //M17SDK -- END
 

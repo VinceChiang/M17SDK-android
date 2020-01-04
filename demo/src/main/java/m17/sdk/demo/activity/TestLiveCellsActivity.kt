@@ -2,50 +2,50 @@ package m17.sdk.demo.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import m17.sdk.demo.view.TestLiveCellLayout
 import com.m17ent.core.module.sdk.M17Sdk
 import com.m17ent.core.module.sdk.configs.M17LiveListConfig
-import com.m17ent.core.module.sdk.interfaces.M17LiveCellBaseView
-import com.m17ent.core.module.sdk.interfaces.M17LiveCellRender
+import com.m17ent.core.module.sdk.dto.M17License
+import com.m17ent.core.module.sdk.interfaces.M17LicenseCallback
+import kotlinx.android.synthetic.main.test_activity_live_list.*
+import m17.sdk.demo.BuildConfig
 import m17.sdk.demo.R
-import m17.sdk.demo.databinding.TestActivityLiveListBinding
 
 class TestLiveCellsActivity : AppCompatActivity() {
-
-    private lateinit var dataBinding : TestActivityLiveListBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.test_activity_live_list)
 
-        dataBinding = DataBindingUtil.setContentView<TestActivityLiveListBinding>(
-            this, R.layout.test_activity_live_list
-        ).apply {
-            this.setLifecycleOwner(this@TestLiveCellsActivity)
-        }
+        infoTxtView.text = BuildConfig.VERSION_INFO
 
-        M17Sdk.getInstance().setUser("Set Company Name", "Set UserId")
+        M17Sdk.getInstance().getLicense("Input Your Company Name", "Input Your UserId", object: M17LicenseCallback {
+            override fun onSuccess(license: M17License) {
+                license?.apply {
+                    showLiveListFragment(this)
+                }
+            }
+        })
+    }
 
-        var config = M17LiveListConfig()
-
+    fun showLiveListFragment(license: M17License){
         //Customer -- START
-//        var config = M17LiveListConfig(object : M17LiveCellRender {
-//            override fun renderCell(): M17LiveCellBaseView {
-//                return TestLiveCellLayout(this@TestLiveCellsActivity)
-//            }
-//        })
+//        var config =
+//            M17LiveListConfig(object : M17LiveCellRender {
+//                override fun renderCell(): M17LiveCellBaseView {
+//                    return TestLiveCellLayout(this@TestLiveCellsActivity)
+//                }
+//            })
         //Customer -- END
 
+        var config = M17LiveListConfig(filterConfig = license?.getRegionListFilterConfig())
         val fragment = M17Sdk.getInstance().createLiveListFragment(config)
 
         fragment?.let {
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.frame, it, "TestLiveListFragment")
+                .replace(R.id.frame, fragment, "TestLiveListFragment")
                 .addToBackStack(null)
                 .commit()
         }
     }
-
 }

@@ -28,7 +28,6 @@
         <activity
             android:name=".activity.TestLiveCellsActivity"
             android:configChanges="orientation|screenSize"
-            android:process="${applicationId}.live"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
     </application>
