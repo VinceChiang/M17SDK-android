@@ -24,6 +24,9 @@ class TestLiveCellsActivity : AppCompatActivity() {
                     showLiveListFragment(this)
                 }
             }
+
+            override fun onError(error: String) {
+            }
         })
     }
 
