@@ -28,7 +28,7 @@ dataBinding {
 ### Dependencies
 ```
 //M17SDK
-implementation "com.m17ent:core:1.1.6"
+implementation "com.m17ent:core:1.1.8"
 implementation "com.m17ent:messaging:1.0.4"
 implementation "com.m17ent:player:1.0.2"
 implementation 'com.android.support:preference-v14'
@@ -84,15 +84,18 @@ override fun onCreate() {
 ```
 
 ### Set Your CompanyName And UserId, Then Get Your License to Show Live List
- - M17Sdk.getInstance().getLicense("Input Your Company Name", "Input Your UserId", M17LicenseCallback {
+ - M17Sdk.getInstance().getLicense("Input Your UserId", M17LicenseCallback {
                override fun onSuccess(license: M17License) {
-                       ``` Handle Your License ```
-                       ``` ex.license.getRegionlListFilterConfig() is M17ListFilterConfig ``` 
+                   ``` Handle Your License ```
+                   ``` ex.license.getRegionlListFilterConfig() is M17ListFilterConfig ```
+               }
+
+               override fun onError(error: String) {
+                    ``` Handle Your Error ```
                }
            })
 
 ### Class Reference
- - (Class) M17LiveListConfig(M17ListFilterConfig) - To create the configuration for live list fragment.
  - (Interface) M17LiveCellBaseView - The view has to confirm this interface to implement in your custom live cell layout.
 
 ### How to get the custom Fragment of live list 
