@@ -30,61 +30,38 @@
 -keep class com.google.firebase.** { *; }
 -keep class androidx.** {*;}
 
-# Platform
--keep class com.machipopo.media17.sdk.module.**.dto.** { *; }
--keep class com.machipopo.media17.sdk.module.sdk.** { *; }
--keep interface com.machipopo.media17.sdk.module.sdk.** { *; }
-
-# enum
--keepclassmembers enum * { *; }
-
-# koin
--keep public class * extends java.lang.Exception
--keepclassmembernames class kotlinx.** {
-    volatile <fields>;
+# Core Module -- START
+-keep class com.m17ent.core.dto.** { *; }
+-keep class com.m17ent.core.module.**.dto.** { *; }
+-keep class com.m17ent.core.module.sdk.** { *; }
+-keep public class com.m17ent.core.module.common.activity.M17BaseActivity { *; }
+-keep public class com.m17ent.core.module.common.fragment.M17BaseFragment { *; }
+-keep interface * {
+  <methods>;
 }
+# Core Module -- START
 
-# OkHttp3
--dontwarn okhttp3.internal.platform.ConscryptPlatform
--dontwarn org.codehaus.mojo.animal_sniffer.*
--keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
+# Messaging Module -- START
+-keep class com.m17ent.messaging.dto.** { *; }
+-keep class com.m17ent.messaging.module.**.dto.** { *; }
+-keep class com.m17ent.messaging.module.**.interface.** { *; }
+-keep class com.m17ent.messaging.module.msgprovider.** { *; }
+# Messaging Module -- END
 
+#WANSU_CHAT -- START
+-keep class com.wangsu.mts.** { *; }
+#WANSU_CHAT -- END
 
-# Retrofit https://github.com/yale8848/RetrofitCache
--dontwarn ren.yale.android.retrofitcachelibrx2.**
--keep class ren.yale.android.retrofitcachelibrx2.** { *; }
--keepclasseswithmembernames class retrofit2.adapter.rxjava2.BodyObservable { *; }
--keepclasseswithmembernames class retrofit2.adapter.rxjava2.ResultObservable { *; }
--keepclasseswithmembernames class retrofit2.adapter.rxjava2.CallEnqueueObservable { *; }
--keepclasseswithmembernames class retrofit2.adapter.rxjava2.CallExecuteObservable { *; }
--keepclasseswithmembernames class retrofit2.Retrofit { *; }
--keepclasseswithmembernames class retrofit2.ServiceMethod { *; }
--keepclasseswithmembernames class retrofit2.OkHttpCall { *; }
--dontwarn javax.annotation.**
--keepclassmembers,allowshrinking,allowobfuscation interface * {
-    @retrofit2.http.* <methods>;
-}
--keepclasseswithmembers class * {
-    @retrofit2.http.* <methods>;
-}
-
-
-# Gson specific classes
--dontwarn sun.misc.**
--keep class sun.misc.Unsafe { *; }
--keep class com.google.gson.stream.** { *; }
--keep class com.google.gson.examples.android.model.** { *; }
--keep class * implements com.google.gson.TypeAdapterFactory
--keep class * implements com.google.gson.JsonSerializer
--keep class * implements com.google.gson.JsonDeserializer
-
-# Ijk
--keep class tv.danmaku.ijk.media.** { *; }
-
-# Glide
--dontwarn com.bumptech.glide.**
--keep class com.bumptech.glide.** {*;}
-
-# PubNub
+# Pubnub -- START
+-dontwarn org.slf4j.**
 -dontwarn com.pubnub.**
 -keep class com.pubnub.** { *; }
+-dontnote retrofit2.Platform
+-dontwarn retrofit2.Platform$Java8
+-dontnote retrofit2.Platform$IOS$MainThreadExecutor
+-keepattributes Exceptions
+# Pubnub -- END
+
+# Ijk -- START
+-keep class tv.danmaku.ijk.media.** { *; }
+# Ijk -- END

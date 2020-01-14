@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 ext{
-    m17ent_core = '1.1.8'
+    m17ent_core = '1.1.9'
     m17ent_messaging = '1.0.4'
     m17ent_player = '1.0.2'
 }
