@@ -28,7 +28,7 @@ dataBinding {
 ### Dependencies
 ```
 //M17SDK
-implementation "com.m17ent:core:1.1.9"
+implementation "com.m17ent:core:1.2.0"
 implementation "com.m17ent:messaging:1.0.4"
 implementation "com.m17ent:player:1.0.2"
 implementation 'com.android.support:preference-v14'
@@ -72,6 +72,9 @@ implementation "com.jakewharton.timber:timber:$timber"
 //Paging
 implementation "androidx.paging:paging-runtime-ktx:$paging_version"
 implementation "androidx.paging:paging-rxjava2:$paging_version"
+
+//Constraint Layout
+implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 ```
 
 ## Application
@@ -84,7 +87,8 @@ override fun onCreate() {
 ```
 
 ### Set Your CompanyName And UserId, Then Get Your License to Show Live List
- - M17Sdk.getInstance().getLicense("Input Your UserId", M17LicenseCallback {
+ - M17Sdk.getInstance().setUserId("Input Your UserId")
+ - M17Sdk.getInstance().getLicense(M17LicenseCallback {
                override fun onSuccess(license: M17License) {
                    ``` Handle Your License ```
                    ``` ex.license.getRegionlListFilterConfig() is M17ListFilterConfig ```

@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 ext{
-    m17ent_core = '1.1.9'
+    m17ent_core = '1.2.0'
     m17ent_messaging = '1.0.4'
     m17ent_player = '1.0.2'
 }
@@ -51,7 +51,7 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
     //M17SDK -- START
-    implementation "com.m17ent:core:$m17ent_core"
+    //implementation "com.m17ent:core:$m17ent_core"
     implementation "com.m17ent:messaging:$m17ent_messaging"
     implementation "com.m17ent:player:$m17ent_player"
     implementation 'com.android.support:preference-v14'
@@ -96,4 +96,9 @@ dependencies {
     //Paging
     implementation "androidx.paging:paging-runtime-ktx:$paging_version"
     implementation "androidx.paging:paging-rxjava2:$paging_version"
+
+    //Constraint Layout --START
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    //Constraint Layout --END
+
 }

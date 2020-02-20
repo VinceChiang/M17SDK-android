@@ -22,7 +22,9 @@ class TestLiveCellsActivity : AppCompatActivity() {
 
         infoTxtView.text = BuildConfig.VERSION_INFO
 
-        M17Sdk.getInstance().getLicense("Input Your UserId", object: M17LicenseCallback {
+        M17Sdk.getInstance().setUserId("M17")
+
+        M17Sdk.getInstance().getLicense(object: M17LicenseCallback {
             override fun onSuccess(license: M17License) {
                 license?.apply {
                     showLiveListFragment(this)
