@@ -3,9 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 ext{
-    m17ent_core = '1.2.0'
-    m17ent_messaging = '1.0.4'
-    m17ent_player = '1.0.2'
+    m17ent_core = '1.2.1'
 }
 
 android {
@@ -19,7 +17,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "VERSION_INFO", "\"Core:v${m17ent_core}, Messaging:v${m17ent_messaging}, Player:v${m17ent_player}\""
+        buildConfigField "String", "VERSION_INFO", "\"Core:v${m17ent_core}\""
     }
 
     buildTypes {
@@ -44,6 +42,7 @@ android {
     }
 }
 
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -51,9 +50,7 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
     //M17SDK -- START
-    //implementation "com.m17ent:core:$m17ent_core"
-    implementation "com.m17ent:messaging:$m17ent_messaging"
-    implementation "com.m17ent:player:$m17ent_player"
+    implementation "com.m17ent:core:$m17ent_core"
     implementation 'com.android.support:preference-v14'
     //M17SDK -- END
 
@@ -62,43 +59,25 @@ dependencies {
 
     //Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines"
 
     //Android X
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
 
-    //Gson
-    implementation "com.google.code.gson:gson:$gson_version"
-
-    //Koin
-    implementation "org.koin:koin-android:$koin"
-    implementation "org.koin:koin-androidx-scope:$koin"
-    implementation "org.koin:koin-androidx-viewmodel:$koin"
-
-    //Retrofit
-    implementation "com.squareup.okhttp3:okhttp:$okhttp"
-    implementation "com.squareup.okhttp3:logging-interceptor:$loggingInterceptor"
-    implementation "com.squareup.retrofit2:retrofit:$retrofit"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
-    implementation "ren.yale.android:retrofitcachelibrx2:$retrofitcachelibrx2"
-
-    //RxJava
-    implementation "io.reactivex.rxjava2:rxjava:$rxJava"
-    implementation "io.reactivex.rxjava2:rxkotlin:$rxKotlin"
-    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid"
-    implementation "com.jakewharton.rxbinding2:rxbinding:$rxBinding"
-    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
-
-    //Timber
-    implementation "com.jakewharton.timber:timber:$timber"
+    //Constraint Layout
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
     //Paging
     implementation "androidx.paging:paging-runtime-ktx:$paging_version"
     implementation "androidx.paging:paging-rxjava2:$paging_version"
 
-    //Constraint Layout --START
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    //Constraint Layout --END
+    //Koin
+    implementation "org.koin:koin-android:$koin"
 
+    //Retrofit
+    implementation "com.squareup.okhttp3:okhttp:$okhttp"
+
+    //RxJava
+    implementation "io.reactivex.rxjava2:rxjava:$rxJava"
 }

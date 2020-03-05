@@ -1,5 +1,7 @@
 # M17SDK-Android
 
+For complete document, welcome to visit our  [document page](https://17media.github.io/M17SDK-android/).
+
 ## Generate your github authorization
 ![](website/github_generate_auth.png)
 
@@ -28,9 +30,7 @@ dataBinding {
 ### Dependencies
 ```
 //M17SDK
-implementation "com.m17ent:core:1.2.0"
-implementation "com.m17ent:messaging:1.0.4"
-implementation "com.m17ent:player:1.0.2"
+implementation "com.m17ent:core:1.2.1"
 implementation 'com.android.support:preference-v14'
     
 //Kotlin
@@ -43,31 +43,14 @@ implementation 'androidx.core:core-ktx:1.1.0'
 //ViewPager2
 implementation 'androidx.viewpager2:viewpager2:1.0.0'
 
-//Gson
-implementation "com.google.code.gson:gson:$gson_version"
-
 //Koin
 implementation "org.koin:koin-android:$koin"
-implementation "org.koin:koin-androidx-scope:$koin"
-implementation "org.koin:koin-androidx-viewmodel:$koin"
 
 //Retrofit
 implementation "com.squareup.okhttp3:okhttp:$okhttp"
-implementation "com.squareup.okhttp3:logging-interceptor:$loggingInterceptor"
-implementation "com.squareup.retrofit2:retrofit:$retrofit"
-implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
-implementation "com.squareup.retrofit2:converter-gson:$retrofit"
-implementation "ren.yale.android:retrofitcachelibrx2:$retrofitcachelibrx2"
 
 //RxJava
 implementation "io.reactivex.rxjava2:rxjava:$rxJava"
-implementation "io.reactivex.rxjava2:rxkotlin:$rxKotlin"
-implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid"
-implementation "com.jakewharton.rxbinding2:rxbinding:$rxBinding"
-implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
-
-//Timber
-implementation "com.jakewharton.timber:timber:$timber"
 
 //Paging
 implementation "androidx.paging:paging-runtime-ktx:$paging_version"
@@ -86,8 +69,7 @@ override fun onCreate() {
 }
 ```
 
-### Set Your CompanyName And UserId, Then Get Your License to Show Live List
- - M17Sdk.getInstance().setUserId("Input Your UserId")
+### Get your license to Show Live List
  - M17Sdk.getInstance().getLicense(M17LicenseCallback {
                override fun onSuccess(license: M17License) {
                    ``` Handle Your License ```
@@ -98,6 +80,18 @@ override fun onCreate() {
                     ``` Handle Your Error ```
                }
            })
+
+### External User ID
+ - An external user ID is used to associate with M17 account. There's some features require users binding their account to M17 account beforehand. In this case, you have to set your user id as your external user id. If the external user id haven't been set, the app will prompt an error message if the feature requires users binding 17 account.
+
+           How to set it
+
+           Just simply call setUserId(), a method of M17Sdk class.
+
+           In practical, you can specify your user id to our SDK in two common cases,
+
+           Update external user id after setting up M17Sdk.
+           Update external user id once your user logged in and has a user id.
 
 ### Class Reference
  - (Interface) M17LiveCellBaseView - The view has to confirm this interface to implement in your custom live cell layout.
@@ -159,7 +153,7 @@ override fun onCreate() {
 -dontwarn org.codehaus.mojo.animal_sniffer.*
 -keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
 
-# Retrofit https://github.com/yale8848/RetrofitCache
+# Retrofit
 -dontwarn ren.yale.android.retrofitcachelibrx2.**
 -keep class ren.yale.android.retrofitcachelibrx2.** { *; }
 -keepclasseswithmembernames class retrofit2.adapter.rxjava2.BodyObservable { *; }
@@ -176,15 +170,6 @@ override fun onCreate() {
 -keepclasseswithmembers class * {
     @retrofit2.http.* <methods>;
 }
-
-# Gson specific classes
--dontwarn sun.misc.**
--keep class sun.misc.Unsafe { *; }
--keep class com.google.gson.stream.** { *; }
--keep class com.google.gson.examples.android.model.** { *; }
--keep class * implements com.google.gson.TypeAdapterFactory
--keep class * implements com.google.gson.JsonSerializer
--keep class * implements com.google.gson.JsonDeserializer
 
 ```
 

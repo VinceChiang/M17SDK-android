@@ -1,0 +1,7 @@
+$dokka.format:html
+$dokka.linkExtension:html
+
+com.m17ent.core.module.sdk
+com.m17ent.core.module.sdk.configs
+com.m17ent.core.module.sdk.dto
+com.m17ent.core.module.sdk.interfaces

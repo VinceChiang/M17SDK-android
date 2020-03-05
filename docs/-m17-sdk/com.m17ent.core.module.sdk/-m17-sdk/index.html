@@ -1,0 +1,152 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>M17Sdk - M17Sdk</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">M17Sdk</a>&nbsp;/&nbsp;<a href="../index.html">com.m17ent.core.module.sdk</a>&nbsp;/&nbsp;<a href="./index.html">M17Sdk</a><br/>
+<br/>
+<h1>M17Sdk</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">M17Sdk</span></code>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<code><span class="identifier">M17Sdk</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="disposables.html">disposables</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">disposables</span><span class="symbol">: </span><span class="identifier">&lt;ERROR CLASS&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="is-init-sdk.html">isInitSdk</a></h4>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">isInitSdk</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="m17-license.html">m17License</a></h4>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">m17License</span><span class="symbol">: </span><a href="../../com.m17ent.core.module.sdk.dto/-m17-license/index.html"><span class="identifier">M17License</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="m17-license-callback.html">m17LicenseCallback</a></h4>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">m17LicenseCallback</span><span class="symbol">: </span><a href="../../com.m17ent.core.module.sdk.interfaces/-m17-license-callback/index.html"><span class="identifier">M17LicenseCallback</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="m17-sdk-config.html">m17SdkConfig</a></h4>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">m17SdkConfig</span><span class="symbol">: </span><a href="../../com.m17ent.core.module.sdk.configs/-m17-sdk-config/index.html"><span class="identifier">M17SdkConfig</span></a><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="clean-external-user-id.html">cleanExternalUserId</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">cleanExternalUserId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="create-live-list-fragment.html">createLiveListFragment</a></h4>
+</td>
+<td>
+<p>create the lives</p>
+<code><span class="keyword">fun </span><span class="identifier">createLiveListFragment</span><span class="symbol">(</span><span class="identifier" id="com.m17ent.core.module.sdk.M17Sdk$createLiveListFragment(com.m17ent.core.module.sdk.configs.M17ListFilterConfig)/filterConfig">filterConfig</span><span class="symbol">:</span>&nbsp;<a href="../../com.m17ent.core.module.sdk.configs/-m17-list-filter-config/index.html"><span class="identifier">M17ListFilterConfig</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">&lt;ERROR CLASS&gt;</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="destroy.html">destroy</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">destroy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="filter-list.html">filterList</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">filterList</span><span class="symbol">(</span><span class="identifier" id="com.m17ent.core.module.sdk.M17Sdk$filterList(com.m17ent.core.module.sdk.dto.M17ListFilterType, kotlin.collections.List((kotlin.String)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="../../com.m17ent.core.module.sdk.dto/-m17-list-filter-type/index.html"><span class="identifier">M17ListFilterType</span></a><span class="symbol">, </span><span class="identifier" id="com.m17ent.core.module.sdk.M17Sdk$filterList(com.m17ent.core.module.sdk.dto.M17ListFilterType, kotlin.collections.List((kotlin.String)))/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-license.html">getLicense</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getLicense</span><span class="symbol">(</span><span class="identifier" id="com.m17ent.core.module.sdk.M17Sdk$getLicense(com.m17ent.core.module.sdk.interfaces.M17LicenseCallback)/callback">callback</span><span class="symbol">:</span>&nbsp;<a href="../../com.m17ent.core.module.sdk.interfaces/-m17-license-callback/index.html"><span class="identifier">M17LicenseCallback</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="init-sdk.html">initSdk</a></h4>
+</td>
+<td>
+<p>init sdk</p>
+<code><span class="keyword">fun </span><span class="identifier">initSdk</span><span class="symbol">(</span><span class="identifier" id="com.m17ent.core.module.sdk.M17Sdk$initSdk(, com.m17ent.core.module.sdk.configs.M17SdkConfig)/context">context</span><span class="symbol">:</span>&nbsp;<span class="identifier">&lt;ERROR CLASS&gt;</span><span class="symbol">, </span><span class="identifier" id="com.m17ent.core.module.sdk.M17Sdk$initSdk(, com.m17ent.core.module.sdk.configs.M17SdkConfig)/config">config</span><span class="symbol">:</span>&nbsp;<a href="../../com.m17ent.core.module.sdk.configs/-m17-sdk-config/index.html"><span class="identifier">M17SdkConfig</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="sign-out.html">signOut</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">signOut</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="update-external-user-id.html">updateExternalUserId</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">updateExternalUserId</span><span class="symbol">(</span><span class="identifier" id="com.m17ent.core.module.sdk.M17Sdk$updateExternalUserId(kotlin.String)/userId">userId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="instance.html">instance</a></h4>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">instance</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">M17Sdk</span></a><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="get-instance.html">getInstance</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getInstance</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">M17Sdk</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

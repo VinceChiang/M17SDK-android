@@ -22,7 +22,7 @@ class TestLiveCellsActivity : AppCompatActivity() {
 
         infoTxtView.text = BuildConfig.VERSION_INFO
 
-        M17Sdk.getInstance().setUserId("M17")
+        M17Sdk.getInstance().updateExternalUserId("M17")
 
         M17Sdk.getInstance().getLicense(object: M17LicenseCallback {
             override fun onSuccess(license: M17License) {
