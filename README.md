@@ -1,7 +1,5 @@
 # M17SDK-Android
 
-For complete document, welcome to visit our  [document page](https://17media.github.io/M17SDK-android/).
-
 ## Generate your github authorization
 ![](website/github_generate_auth.png)
 
@@ -84,14 +82,14 @@ override fun onCreate() {
 ### External User ID
  - An external user ID is used to associate with M17 account. There's some features require users binding their account to M17 account beforehand. In this case, you have to set your user id as your external user id. If the external user id haven't been set, the app will prompt an error message if the feature requires users binding 17 account.
 
-           How to set it
+    How to set it
 
-           Just simply call setUserId(), a method of M17Sdk class.
+    Just simply call updateExternalUserId(), a method of M17Sdk class.
 
-           In practical, you can specify your user id to our SDK in two common cases,
+    In practical, you can specify your user id to our SDK in two common cases,
 
-           Update external user id after setting up M17Sdk.
-           Update external user id once your user logged in and has a user id.
+       1.Update external user id after setting up M17Sdk.
+       2.Update external user id once your user logged in and has a user id.
 
 ### Class Reference
  - (Interface) M17LiveCellBaseView - The view has to confirm this interface to implement in your custom live cell layout.
