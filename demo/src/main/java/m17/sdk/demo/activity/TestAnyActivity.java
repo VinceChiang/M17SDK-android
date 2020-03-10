@@ -24,8 +24,7 @@ public class TestAnyActivity extends AppCompatActivity {
 
     private long mNowSec;
     private View mView;
-
-
+    
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
