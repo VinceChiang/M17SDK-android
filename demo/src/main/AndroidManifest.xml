@@ -30,6 +30,10 @@
             android:configChanges="orientation|screenSize"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
+        <activity
+            android:name=".activity.TestAnyActivity"
+            />
+
     </application>
 
 </manifest>
