@@ -61,7 +61,7 @@ allprojects {
             url "https://raw.githubusercontent.com/17media/M17_SDK_Released/master/releases"
             credentials(HttpHeaderCredentials) {
                 name = "Authorization"
-                value = "Bearer bb6e7b213ad2c941f00f0a8df4a191ca691aacd0"
+                value = "Bearer "
             }
             authentication {
                 header(HttpHeaderAuthentication)
