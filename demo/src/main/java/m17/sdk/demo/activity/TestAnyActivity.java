@@ -31,6 +31,7 @@ public class TestAnyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test_activity_any);
 
+        
         //mView = findViewById(R.id.layout_particle_animation);
         showTestAnimation();
     }
