@@ -7,7 +7,9 @@ public class ThreadPool {
     public static ThreadPoolExecutor getInstance() {
         if (sExecutor == null) {
             synchronized (ThreadPool.class) {
-                sExecutor = ExecutorFactory.createThreadPoolExecutor();
+                if (sExecutor == null) {
+                    sExecutor = ExecutorFactory.createThreadPoolExecutor();
+                }
             }
         }
         return sExecutor;
