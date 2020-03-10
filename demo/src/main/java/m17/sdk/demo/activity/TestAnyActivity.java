@@ -12,7 +12,6 @@ import com.plattysoft.leonids.ParticleSystem;
 import com.plattysoft.leonids.modifiers.ScaleModifier;
 
 import m17.sdk.demo.R;
-import m17.sdk.demo.utils.ThreadPool;
 
 public class TestAnyActivity extends AppCompatActivity {
 
@@ -24,7 +23,7 @@ public class TestAnyActivity extends AppCompatActivity {
 
     private long mNowSec;
     private View mView;
-    
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

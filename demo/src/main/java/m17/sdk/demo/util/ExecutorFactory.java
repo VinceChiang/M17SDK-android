@@ -1,4 +1,4 @@
-package m17.sdk.demo.utils;
+package m17.sdk.demo.util;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
