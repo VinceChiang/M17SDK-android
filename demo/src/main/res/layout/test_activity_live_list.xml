@@ -25,14 +25,6 @@
             android:layout_gravity="start|bottom"
             tools:text="info"/>
 
-        <Button
-            android:id="@+id/test_for_aws"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:text="Test"
-            android:textSize="16sp"
-            />
-
     </FrameLayout>
 
 </layout>

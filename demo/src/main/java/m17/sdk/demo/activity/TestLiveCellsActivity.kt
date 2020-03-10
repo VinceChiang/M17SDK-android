@@ -1,6 +1,5 @@
 package m17.sdk.demo.activity
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -35,12 +34,6 @@ class TestLiveCellsActivity : AppCompatActivity() {
             override fun onError(error: String) {
             }
         })
-
-        test_for_aws.setOnClickListener {
-            println("Vince ooooo")
-            val intent = Intent(this, TestAnyActivity::class.java)
-            startActivity(intent)
-        }
     }
 
     fun showLiveListFragment(license: M17License){
